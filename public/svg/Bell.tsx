@@ -8,17 +8,17 @@ const Bell = () => {
       <path
         d="M6 10.5C6 7.18629 8.68629 4.5 12 4.5V4.5C15.3137 4.5 18 7.18629 18 10.5V17H6V10.5Z"
         // class="fill-none stroke-current"
-        stroke-width="2"
-        stroke-linejoin="round"></path>
+        strokeWidth="2"
+        strokeLinejoin="round"></path>
       <path
         d="M4 17H20"
         // class="fill-none stroke-current"
-        stroke-width="2"
-        stroke-linecap="round"></path>
+        strokeWidth="2"
+        strokeLinecap="round"></path>
       <path
         d="M15 17.5C15 19.1569 13.6569 20.5 12 20.5C10.3431 20.5 9 19.1569 9 17.5"
         // class="fill-none stroke-current"
-        stroke-width="2"></path>
+        strokeWidth="2"></path>
       <rect
         x="11"
         y="1"

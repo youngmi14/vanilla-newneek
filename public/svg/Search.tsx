@@ -9,14 +9,14 @@ const Search = () => {
         cx="11"
         cy="10.7156"
         r="6.33206"
-        stroke-width="2"></circle>
+        strokeWidth="2"></circle>
       <line
         x1="15.7194"
         y1="15.6702"
         x2="20.2792"
         y2="20.23"
-        stroke-width="2"
-        stroke-linecap="round"></line>
+        strokeWidth="2"
+        strokeLinecap="round"></line>
     </svg>
   );
 };
