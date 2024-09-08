@@ -1,6 +1,11 @@
 import * as styles from './Article.css';
 import Link from 'next/link';
 import Image from 'next/image';
+import Heart from '@/public/svg/Heart';
+import Bookmark from '@/public/svg/Bookmark';
+import Comment from '@/public/svg/Comment';
+
+import { root } from '@/styles/globalTheme.css';
 
 function Article() {
   return (
@@ -44,15 +49,26 @@ function Article() {
         </div>
         <div className={styles.stats}>
           <span className={styles.stat}>
-            좋아요
+            <Heart 
+              checked={true} 
+              width={'18px'}
+              height={'18px'}
+            />
             10
           </span>
           <span className={styles.stat}>
-            댓글
+            <Comment 
+              width={'18px'}
+              height={'18px'}
+            />
             24
           </span>
           <span className={styles.stat}>
-            북마크
+            <Bookmark 
+              checked={true} 
+              width={'18px'}
+              height={'18px'}
+            />
             2
           </span>
         </div>

@@ -1,10 +1,18 @@
 const Search = () => {
+  const style = {
+    color: '#ffffff',
+  }
+
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
       viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg">
+      fill="none"
+      stroke="currentColor"
+      style={style}
+      >
       <circle
         cx="11"
         cy="10.7156"

@@ -135,3 +135,6 @@ button {
   border: 0;
   background: none;
 }
+svg {
+  display: block;
+}

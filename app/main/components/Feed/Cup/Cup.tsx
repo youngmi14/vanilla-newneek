@@ -1,5 +1,7 @@
 import * as styles from './Cup.css';
 import Link from 'next/link';
+import Bookmark from '@/public/svg/Bookmark';
+import Heart from '@/public/svg/Heart';
 
 function Cup() {
   return (
@@ -14,8 +16,8 @@ function Cup() {
         </div>
       </div>
       <div className={styles.interaction}>
-        <div>좋아요</div>
-        <div>북마크</div>
+        <Heart />
+        <Bookmark />
       </div>
     </Link>
   )

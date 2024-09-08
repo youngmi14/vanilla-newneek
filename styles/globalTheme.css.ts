@@ -15,6 +15,10 @@ export const root = createGlobalTheme(':root', {
       gray_500: '#77797b',
       gray_600: '#3c4043',
       gray_900: '#111213',
+    },
+    svg: {
+      unchecked: '#979b9e',
+      checked: '',
     }
   },
   font: {

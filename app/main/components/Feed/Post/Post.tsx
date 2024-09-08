@@ -3,6 +3,7 @@ import nowNews from '@/mock/nowNews';
 import { PostT } from '@/model/article';
 import Link from 'next/link';
 import Heart from '@/public/svg/Heart';
+import Comment from '@/public/svg/Comment';
 
 function Post() {
   return (
@@ -22,11 +23,15 @@ function Post() {
       </div>
       <div className={styles.interaction}>
         <div>
-          <span><Heart /></span>
+          <span>
+            <Heart 
+              checked={true}
+            />
+          </span>
           <span>1</span>
         </div>
         <div>
-          <span>댓글</span>
+          <Comment />
           <span>3</span>
         </div>
       </div>

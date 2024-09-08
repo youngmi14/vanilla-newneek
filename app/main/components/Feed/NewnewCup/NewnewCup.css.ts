@@ -29,7 +29,8 @@ export const strong = style({
 export const seemore = style({
   display: 'flex',
   alignItems: 'center',
-  color: root.color.grayscale.gray_500
+  color: root.color.grayscale.gray_500,
+  fontWeight: 700,
 })
 
 export const cupSection = style({
