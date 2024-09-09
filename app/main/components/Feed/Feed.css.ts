@@ -26,7 +26,7 @@ export const header = style({
   marginBottom: '1.5rem',
   marginLeft: '-2.25rem',
   marginRight: '-2.25rem',
-  paddingTop: '0.75rem',
+  paddingTop: '.75rem',
   backgroundColor: root.color.base.white,
 });
 
@@ -55,7 +55,7 @@ export const button = style({
   justifyContent: 'center',
   height: '2.5rem',
   marginBottom: '-0.125rem',
-  padding: '0.5rem 0.75rem',
+  padding: '.5rem 0.75rem',
   color: root.color.grayscale.gray_500,
   fontSize: '1rem',
   fontWeight: 400,
@@ -66,10 +66,26 @@ export const button = style({
   cursor: 'pointer',
 })
 
+export const buttonSelected = style({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: '2.5rem',
+  marginBottom: '-.125rem',
+  padding: '.5rem 0.75rem',
+  color: root.color.primary.orange_900,
+  fontSize: '1rem',
+  fontWeight: 700,
+  lineHeight: 1.5,
+  whiteSpace: 'nowrap',
+  borderBottom: `2px solid ${root.color.primary.orange_900}`,
+  cursor: 'pointer',
+})
+
 export const articleWrap = style({
   display: 'flex',
   flexDirection: 'column',
-  padding: '0.75rem '
+  padding: '.75rem '
 })
 
 export const bottomMargin = style({

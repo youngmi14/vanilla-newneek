@@ -16,8 +16,16 @@ function Cup() {
         </div>
       </div>
       <div className={styles.interaction}>
-        <Heart />
-        <Bookmark />
+        <Heart
+          checked={true} 
+          width={'16px'}
+          height={'16px'}
+        />
+        <Bookmark
+          checked={true} 
+          width={'16px'}
+          height={'16px'}
+        />
       </div>
     </Link>
   )

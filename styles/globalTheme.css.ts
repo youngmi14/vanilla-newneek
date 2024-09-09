@@ -12,14 +12,11 @@ export const root = createGlobalTheme(':root', {
     grayscale: {
       gray_100: '#eeeeee',
       gray_200: '#e4e5e5',
+      gray_400: '#979b9e',
       gray_500: '#77797b',
       gray_600: '#3c4043',
       gray_900: '#111213',
     },
-    svg: {
-      unchecked: '#979b9e',
-      checked: '',
-    }
   },
   font: {
     body: `-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo',

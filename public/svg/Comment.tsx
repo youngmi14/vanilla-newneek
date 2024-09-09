@@ -3,14 +3,13 @@ import { root } from '@/styles/globalTheme.css';
 
 const Comment = ({
   width,
-  height,
-  checked
+  height
 }: CommentProp) => {
   
   const style = {
     width: width ? width : '24px',
     height: height ? height : '24px',
-    color: checked ? '#ff0000' : `${root.color.svg.unchecked}`,
+    color: root.color.grayscale.gray_400,
   }
 
   return (

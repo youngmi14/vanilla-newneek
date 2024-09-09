@@ -12,7 +12,9 @@ function NowNews() {
           <strong className={styles.strong}>지금 뜨는 뉴스</strong>
           <Link className={styles.seemore} href="/posts?tab=news">
             <span>더 보기</span>
-            <span><ArrowR/></span>
+            <span>
+              <ArrowR width={'1rem'} height={'1rem'} />
+            </span>
           </Link>
         </div>
         <div className={styles.postSection}>

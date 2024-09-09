@@ -1,16 +1,13 @@
 import { ArrowRProp } from "@/model/svg";
-import { root } from '@/styles/globalTheme.css';
 
 const ArrowR = ({
   width,
   height,
-  checked
 }: ArrowRProp) => {
 
   const style = {
     width: width ? width : '24px',
     height: height ? height : '24px',
-    color: checked ? '#ff0000' : `${root.color.svg.unchecked}`,
   }
   
   return (

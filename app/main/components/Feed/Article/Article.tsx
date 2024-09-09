@@ -5,8 +5,6 @@ import Heart from '@/public/svg/Heart';
 import Bookmark from '@/public/svg/Bookmark';
 import Comment from '@/public/svg/Comment';
 
-import { root } from '@/styles/globalTheme.css';
-
 function Article() {
   return (
     <Link className={styles.article} href={'/'}>

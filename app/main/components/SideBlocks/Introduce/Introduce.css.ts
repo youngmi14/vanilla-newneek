@@ -1,7 +1,7 @@
 import { style } from '@vanilla-extract/css';
 
 export const introduce = style({
-  borderRadius: '0.5rem',
+  borderRadius: '.5rem',
   overflow: 'hidden'
 })
 

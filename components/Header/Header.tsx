@@ -15,7 +15,7 @@ export default function Header() {
         </ul>
         <ul></ul>
         <ul className={styles.navUser}>
-          <li><Search/></li>
+          <li><Search header={true} /></li>
           <li><Bell/></li>
           <li>로그인</li>
         </ul>

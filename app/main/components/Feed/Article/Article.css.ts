@@ -11,7 +11,7 @@ export const article = style({
 export const articleWrap = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: '0.75rem',
+  gap: '.75rem',
   padding: '.5rem 0',
 });
 
@@ -58,9 +58,9 @@ export const contentSummary = style({
   maxWidth: '14rem',
   width: 'fit-content',
   lineHeight: 1.5,
-  fontSize: '0.75rem',
-  padding: '0.25rem 0.5rem',
-  borderRadius: '0.375rem',
+  fontSize: '.75rem',
+  padding: '.25rem 0.5rem',
+  borderRadius: '.375rem',
   overflow: 'hidden',
   display: '-webkit-box',
   WebkitBoxOrient: 'vertical',

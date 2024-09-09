@@ -1,6 +1,16 @@
-const Search = () => {
+import { SearchProp } from "@/model/svg";
+import { root } from '@/styles/globalTheme.css';
+
+const Search = ({
+  width,
+  height,
+  header
+}: SearchProp) => {
+
   const style = {
-    color: '#ffffff',
+    width: width ? width : '24px',
+    height: height ? height : '24px',
+    color: header ? root.color.base.white : root.color.grayscale.gray_400
   }
 
   return (

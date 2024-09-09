@@ -26,7 +26,7 @@ export const img = style({
   objectPosition: 'center',
   width: '3.5rem',
   height: '3.5rem',
-  marginBottom: '0.5rem'
+  marginBottom: '.5rem'
 })
 
 export const text = style({
@@ -43,8 +43,8 @@ export const startBtn = style({
   backgroundColor: root.color.primary.orange_900,
   fontWeight: 700,
   lineHeight: '1.285',
-  paddingLeft: '0.75rem',
-  paddingRight: '0.75rem',
-  borderRadius: '0.5rem',
+  paddingLeft: '.75rem',
+  paddingRight: '.75rem',
+  borderRadius: '.5rem',
   whiteSpace: 'nowrap'
 })

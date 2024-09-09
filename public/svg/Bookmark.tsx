@@ -10,7 +10,8 @@ const Bookmark = ({
     const style = {
         width: width ? width : '24px',
         height: height ? height : '24px',
-        color: checked ? '#ff0000' : `${root.color.svg.unchecked}`,
+        color: checked ? root.color.primary.orange_900 : root.color.grayscale.gray_400,
+        fill: checked ? "currentColor" : "none"
     }
 
     return (
@@ -19,7 +20,6 @@ const Bookmark = ({
             width="24" 
             height="24" 
             viewBox="0 0 24 24"
-            fill="none"
             stroke="currentColor"
             style={style}
         >

@@ -8,6 +8,9 @@ export interface HeartProp extends svgPropT {
     checked: boolean;
 }
 
+// MiniHeart
+export interface MiniHeartProp extends svgPropT {}
+
 // Comment
 export interface CommentProp extends svgPropT {}
 
@@ -21,3 +24,8 @@ export interface BellProp extends svgPropT {}
 
 // ArrowR
 export interface ArrowRProp extends svgPropT {}
+
+// Search
+export interface SearchProp extends svgPropT {
+    header: boolean;
+}

@@ -1,18 +1,32 @@
+'use client'
+
 import * as styles from './Feed.css';
+import { useState } from 'react';
 import NowNews from './NowNews/NowNews';
 import NewnewCup from './NewnewCup/NewnewCup';
 import Article from './Article/Article';
 
 function Center() {
+  const [selectedTab, setSelectedTab] = useState<'recommend' | 'article' | 'post'>('recommend');
+
   return (
     <div className={styles.feed}>
       <div className={styles.header}>
         <div className={styles.relativeDiv}>
           <div className={styles.borderDiv}>
             <div className={styles.buttonWrap}>
-              <button className={styles.button}>추천</button>
-              <button className={styles.button}>아티클</button>
-              <button className={styles.button}>포스트</button>
+              <button
+                className={selectedTab === "recommend" ? styles.buttonSelected : styles.button}
+                onClick={() => setSelectedTab('recommend')}
+              >추천</button>
+              <button
+                className={selectedTab === "article" ? styles.buttonSelected : styles.button}
+                onClick={() => setSelectedTab('article')}
+              >아티클</button>
+              <button
+                className={selectedTab === "post" ? styles.buttonSelected : styles.button}
+                onClick={() => setSelectedTab('post')}
+              >포스트</button>
             </div>
           </div>
         </div>

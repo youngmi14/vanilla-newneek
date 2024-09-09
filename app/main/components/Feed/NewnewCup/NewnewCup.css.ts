@@ -10,7 +10,7 @@ export const newnewCup = style({
 export const newcupFlex = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: '0.75rem',
+  gap: '.75rem',
   padding: '.75rem 0',
 })
 

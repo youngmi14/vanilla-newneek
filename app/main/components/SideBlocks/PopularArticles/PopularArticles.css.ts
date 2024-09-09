@@ -20,12 +20,12 @@ export const ul = style({
 
 export const article = style({
   display: 'flex',
-  gap: '0.125rem',
+  gap: '.125rem',
 })
 
 export const number = style({
   color: root.color.grayscale.gray_600,
-  fontSize: '0.75rem',
+  fontSize: '.75rem',
   lineHeight: 1.5,
   textAlign: 'center',
   justifyContent: 'center',
@@ -37,13 +37,13 @@ export const number = style({
 export const content = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: '0.25rem',
+  gap: '.25rem',
 })
 
 export const articleTitle = style({
   color: root.color.grayscale.gray_900,
   fontWeight: 700,
-  fontSize: '0.875rem',
+  fontSize: '.875rem',
   lineHeight: 1.285,
   overflow: 'hidden',
   WebkitLineClamp: 1,
@@ -51,9 +51,9 @@ export const articleTitle = style({
 
 export const infoWrap = style({
   color: root.color.grayscale.gray_500,
-  fontSize: '0.75rem',
+  fontSize: '.75rem',
   lineHeight: 1.5,
-  gap: '0.125rem',
+  gap: '.125rem',
   display: 'flex',
   alignItems: 'center'
 })
