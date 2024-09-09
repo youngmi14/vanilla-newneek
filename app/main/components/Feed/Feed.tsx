@@ -2,12 +2,20 @@
 
 import * as styles from './Feed.css';
 import { useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import NowNews from './NowNews/NowNews';
 import NewnewCup from './NewnewCup/NewnewCup';
 import Article from './Article/Article';
+// import FeedData from '@/model/api';
+
 
 function Center() {
   const [selectedTab, setSelectedTab] = useState<'recommend' | 'article' | 'post'>('recommend');
+
+  const { data } = useQuery({
+    queryKey: ['feed'],
+    queryFn: async () => (await fetch('https://api.newneek.co/product/v1/home/feed-web')).json()
+  })
 
   return (
     <div className={styles.feed}>
