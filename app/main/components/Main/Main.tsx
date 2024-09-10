@@ -1,5 +1,5 @@
 import StartNewNeek from '../StartNewNeek/StartNewNeek';
-import Feed from '../Feed/Feed';
+import MainFeed from '../MainFeed/MainFeed';
 import SideBlocks from '../SideBlocks/SideBlocks';
 import * as styles from './Main.css';
 
@@ -7,7 +7,7 @@ function Main() {
   return (
     <main className={styles.main}>
       <StartNewNeek />
-      <Feed />
+      <MainFeed />
       <SideBlocks />
     </main>
   )

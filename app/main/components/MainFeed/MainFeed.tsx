@@ -1,21 +1,37 @@
 'use client'
 
-import * as styles from './Feed.css';
+import * as styles from './MainFeed.css';
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import NowNews from './NowNews/NowNews';
-import NewnewCup from './NewnewCup/NewnewCup';
-import Article from './Article/Article';
-// import FeedData from '@/model/api';
+import { FeedData } from '@/model/api/feed-web';
+import Feed from './Feed/Feed';
 
 
-function Center() {
+function MainFeed() {
   const [selectedTab, setSelectedTab] = useState<'recommend' | 'article' | 'post'>('recommend');
 
-  const { data } = useQuery({
+  const { data: data, isLoading, error } = useQuery({
     queryKey: ['feed'],
     queryFn: async () => (await fetch('https://api.newneek.co/product/v1/home/feed-web')).json()
   })
+
+  let feed;
+
+  if (isLoading) {
+    feed = (
+      <div>로딩 중...</div>
+    )
+  }
+  if (error) {
+    feed = (
+      <div>에러</div>
+    )
+  }
+  if (data) {
+    feed = (
+      <Feed {...data} />
+    )
+  }
 
   return (
     <div className={styles.feed}>
@@ -39,20 +55,13 @@ function Center() {
           </div>
         </div>
       </div>
+      
       <div className={styles.articleWrap}>
-        {/* 지금 뜨는 뉴스 */}
-        <NowNews />
-        {/* 뉴뉴컵 참여작 */}
-        <NewnewCup />
-        {/* 뉴닉 아티클 */}
-        {/* 추천 포스트 */}
-        {/* 추천 아티클 */}
-        <Article />
+        {feed}
       </div>
       <div className={styles.bottomMargin}></div>
     </div>
   )
 }
 
-export default Center;
-
+export default MainFeed;

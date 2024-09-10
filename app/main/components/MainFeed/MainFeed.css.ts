@@ -82,12 +82,6 @@ export const buttonSelected = style({
   cursor: 'pointer',
 })
 
-export const articleWrap = style({
-  display: 'flex',
-  flexDirection: 'column',
-  padding: '.75rem '
-})
-
 export const bottomMargin = style({
   height: '2.5rem',
   width: '100 %'
