@@ -1,37 +1,10 @@
-import { title } from './../../app/main/components/SideBlocks/PopularArticles/PopularArticles.css';
-// feed-web api
-interface FeedPost {
-  article: string | null;
-  content: string | null;
-  id: number;
-  level: number;
-  text: string
-}
+import { MetaType, UserType, StampType } from './common';
 
-interface FeedPostData {
-  link: string;
-  title: string;
-  posts: FeedPost[];
-}
-
-interface FeedEntity {
-  id: number;
-  type: string;
-  data: FeedPostData;
-}
-
-//------------------------------------
 interface BaseType {
   type: string;
   id: number | null;
 }
-
-interface Thumbnail {
-  altText: null | string;
-  id: number;
-  url: string;
-}
-interface Items {
+interface ItemType {
   comment: string;
   handle: string;
   id: number;
@@ -40,47 +13,13 @@ interface Items {
   tag: string;
   title: string;
 }
-interface Meta {
-  countComments: number;
-  countLikes: number;
-  countReads: number;
-  countRootings: number;
-  countSaves: number;
-  cursor: number;
-  isLiked: boolean;
-  isSaved: boolean;
-}
-interface Series {
-  canRating: boolean;
-  description: string;
-  id: number;
-  title: string;
-}
-interface User {
-  badge: string;
-  bio: string;
-  handle: string;
-  name: string;
-  photo: string;
-  userId: string;
-}
-
-
-// post-b
-type PostB = BaseType & {
-  data: {
-    link: string;
-    title: string;
-    items: Items[]
-  }[]
-}
 
 // newnewcup
 type Newnewcup = BaseType & {
   data: {
     link: string;
     title: string;
-    items: Items[]
+    items: ItemType[]
   }
 }
 
@@ -91,10 +30,7 @@ type ArticlesT = {
   id: number;
   state: string;
   title: string;
-  meta: Meta;
-  series: Series;
-  thumbnail: Thumbnail
-  user: User;
+  meta: MetaType;
 }
 type ArticleA = BaseType & {
   data: {
@@ -118,65 +54,40 @@ type Article = BaseType & {
     contentPlain: string;
     dtPublished: string;
     id: number;
+    meta: MetaType
     state: string;
     title: string;
-    meta: Meta & {
-      state: string;
-      title: string;
-      series: Series;
-      thumbnail: Thumbnail
-      user: User;
-    }
   }
 }
 
+// post-b
+type PostType = {
+  article: null;
+  channel: null;
+  childrenCount: number;
+  content: null;
+  createdAt: number;
+  editedAt: null;
+  id: number;
+  level: number;
+  media: [];
+  mentions: null;
+  parentId: null;
+  pinCount: number;
+  pinId: null;
+  readCount: null;
+  stamps: StampType;
+  text: string;
+  treeId: number;
+  user: UserType;
+}
 type PostB = BaseType & {
   data: {
     link: string;
     title: string;
-    posts: {
-      article: null;
-      channel: null;
-      childrenCount: number;
-      content: null;
-      createdAt: number;
-      editedAt: null;
-      id: number;
-      level: number;
-      media: [];
-      mentions: null;
-      parentId: null;
-      pinCount: number;
-      pinId: null;
-      readCount: null;
-      text: string;
-      treeId: number;
-      stamps: {
-        text: string;
-        treeId: number;
-        my: [];
-        all: {
-          count: number;
-          items: [];
-        }
-      }
-      user: {
-        badge: string;
-        bio: string;
-        followIdByMe: number | null;
-        handle: string;
-        name: string;
-        photo: string;
-        userId: string;
-      }
-    }[]
+    posts: PostType[]
   }
 }
-
-
-
-
-
 
 export type FeedData = {
   cursor: null;
