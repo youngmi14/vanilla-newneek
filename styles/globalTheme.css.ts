@@ -8,6 +8,7 @@ export const root = createGlobalTheme(':root', {
     },
     primary: {
       orange_900: '#ff6b00',
+      orange_500: '#fc937c',
     },
     grayscale: {
       gray_100: '#eeeeee',
@@ -18,6 +19,12 @@ export const root = createGlobalTheme(':root', {
       gray_700: '#3c4043',
       gray_900: '#111213',
     },
+    system: {
+      purple_900: '#9c26f9',
+      purple_500: '#d583fd',
+      green_900: '#0eb766',
+      green_500: '#69de8e',
+    }
   },
   font: {
     body: `-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo',

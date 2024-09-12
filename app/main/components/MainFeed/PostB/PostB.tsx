@@ -16,7 +16,7 @@ export default function PostB({
         <div className={styles.postSection}>
           <div className={styles.postScroll}>
           <div className={styles.postWrap}>
-            {posts.map((post) => 
+            {posts.map(post => 
               <Post key={post.id} {...post} />
             )}
           </div>

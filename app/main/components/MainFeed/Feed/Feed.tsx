@@ -10,7 +10,6 @@ import * as styles from './Feed.css';
 export default function Feed({
   entities
 }: FeedData) {
-  console.log('피드데이터 : ', entities)
   return (
     <div className={styles.articleWrap}>
       {entities.map((feed) =>
@@ -29,7 +28,7 @@ function FeedBlock({
   return (
     <>
       {type === 'post-b' && <PostB {...data} />}
-      {type === 'newnewcup' && <NewnewCup />}
+      {type === 'newnewcup' && <NewnewCup {...data} />}
       {type === 'article-a' && <ArticleA />}
       {type === 'article' && <Article />}
       {type === 'divider' && <Divider />}

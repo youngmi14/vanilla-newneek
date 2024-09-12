@@ -1,12 +1,13 @@
 import { BaseType, ItemType, PostType, ArticleType } from './common';
 
 // newnewcup
+export type CupData = {
+  link: string;
+  title: string;
+  items: ItemType[]
+}
 type NewnewcupT = BaseType & {
-  data: {
-    link: string;
-    title: string;
-    items: ItemType[]
-  }
+  data: CupData;
 };
 
 // article-a

@@ -3,13 +3,14 @@ export interface BaseType {
   type: string;
   id: number | null;
 };
+export type TagType = "나의AI" | "나의덕질" | "나의지구" | null;
 export interface ItemType {
-  comment: string;
+  content: string | null;
   handle: string;
   id: number;
   likes: number;
   save: number;
-  tag: string;
+  tag: TagType;
   title: string;
 };
 interface ThumbnailType {

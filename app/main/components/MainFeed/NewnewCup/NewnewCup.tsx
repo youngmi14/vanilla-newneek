@@ -1,24 +1,26 @@
 import * as styles from './NewnewCup.css';
-import Link from 'next/link';
 import Cup from '../Cup/Cup';
-import ArrowR from '@/public/svg/ArrowR';
+import ViewMore from '@/components/ViewMore/ViewMore';
+import { CupData } from '@/model/api/feed-web';
 
-function NewnewCup() {
+function NewnewCup({
+  link, title, items
+}: CupData) {
+  console.log('items: ', items)
   return (
     <div className={styles.newnewCup}>
       <div className={styles.newcupFlex}>
         <div className={styles.title}>
-          <strong className={styles.strong}>뉴뉴컵 참여작</strong>
-          <Link className={styles.seemore} href="/posts?tab=news">
-            <span>더 보기</span>
-            <span>
-              <ArrowR width={'1rem'} height={'1rem'} />
-            </span>
-          </Link>
+          <strong className={styles.strong}>{title}</strong>
+          <ViewMore link={link} />
         </div>
         <div className={styles.cupSection}>
           <div className={styles.cupScroll}>
-            <CupList/>
+          <div className={styles.cupWrap}>
+              {items.map(item => 
+                <Cup key={item.id} {...item} />
+            )}
+          </div>
           </div>
         </div>
       </div>
@@ -27,20 +29,3 @@ function NewnewCup() {
 }
 
 export default NewnewCup;
-
-function CupList() {
-  const data = [
-    1,
-    2,
-    3,
-    4
-  ];
-
-  return (
-    <div className={styles.cupWrap}>
-        {data.map((post, idx) => 
-          <Cup key={idx} />
-      )}
-    </div>
-  )
-}
