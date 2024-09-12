@@ -1,95 +1,51 @@
-import { MetaType, UserType, StampType } from './common';
-
-interface BaseType {
-  type: string;
-  id: number | null;
-}
-interface ItemType {
-  comment: string;
-  handle: string;
-  id: number;
-  likes: number;
-  save: number;
-  tag: string;
-  title: string;
-}
+import { BaseType, ItemType, PostType, ArticleType } from './common';
 
 // newnewcup
-type Newnewcup = BaseType & {
+type NewnewcupT = BaseType & {
   data: {
     link: string;
     title: string;
     items: ItemType[]
   }
-}
+};
 
 // article-a
-type ArticlesT = {
-  contentPlain: string;
-  dtPublished: string;
-  id: number;
-  state: string;
-  title: string;
-  meta: MetaType;
-}
-type ArticleA = BaseType & {
+type ArticleAT = BaseType & {
   data: {
     link: string;
     title: string;
-    articles: ArticlesT[]
+    articles: ArticleType[]
   }
-}
+};
 
 // divider
-type Divider = BaseType & {
+type DividerT = BaseType & {
   data: {
     desc: string;
     title: string;
   }
-}
+};
 
 // article
-type Article = BaseType & {
-  data: {
-    contentPlain: string;
-    dtPublished: string;
-    id: number;
-    meta: MetaType
-    state: string;
-    title: string;
-  }
-}
+type ArticleT = BaseType & {
+  data: ArticleType;
+};
 
 // post-b
-type PostType = {
-  article: null;
-  channel: null;
-  childrenCount: number;
-  content: null;
-  createdAt: number;
-  editedAt: null;
-  id: number;
-  level: number;
-  media: [];
-  mentions: null;
-  parentId: null;
-  pinCount: number;
-  pinId: null;
-  readCount: null;
-  stamps: StampType;
-  text: string;
-  treeId: number;
-  user: UserType;
+export interface PostData {
+  link: string;
+  title: string;
+  posts: PostType[];
 }
-type PostB = BaseType & {
-  data: {
-    link: string;
-    title: string;
-    posts: PostType[]
-  }
-}
+export type PostBT = {
+  id: null | number;
+  type: string;
+  data: PostData;
+};
+
+export type EntityType = PostBT | NewnewcupT | ArticleAT | DividerT | ArticleT;
 
 export type FeedData = {
+  entities: EntityType[];
   cursor: null;
-  entities: (PostB|Newnewcup|ArticleA|Divider|Article)[];
-}
+};

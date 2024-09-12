@@ -3,7 +3,6 @@
 import * as styles from './MainFeed.css';
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { FeedData } from '@/model/api/feed-web';
 import Feed from './Feed/Feed';
 
 
@@ -55,10 +54,7 @@ function MainFeed() {
           </div>
         </div>
       </div>
-      
-      <div className={styles.articleWrap}>
-        {feed}
-      </div>
+      {feed}
       <div className={styles.bottomMargin}></div>
     </div>
   )

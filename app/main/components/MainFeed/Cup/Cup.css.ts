@@ -49,7 +49,7 @@ export const content = style({
   overflow: 'hidden',
   marginTop: '.5rem',
   WebkitLineClamp: 2,
-  color: root.color.grayscale.gray_600,
+  color: root.color.grayscale.gray_700,
 
 })
 

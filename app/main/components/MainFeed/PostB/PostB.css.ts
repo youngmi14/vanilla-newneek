@@ -1,13 +1,13 @@
 import { style } from '@vanilla-extract/css';
 import { root } from '@/styles/globalTheme.css';
 
-export const nowNews = style({
+export const PostB = style({
   marginBottom: '1rem',
   paddingBottom: '1rem',
   borderBottom: `1px solid ${root.color.grayscale.gray_100}`
 })
 
-export const nowNewsFlex = style({
+export const PostBFlex = style({
   display: 'flex',
   flexDirection: 'column',
   gap: '.75rem',

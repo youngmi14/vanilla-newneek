@@ -27,15 +27,28 @@ export const authorWrap = style({
   flex: '1 1 0%'
 })
 
+export const img = style({
+  objectPosition: 'center',
+  objectFit: 'cover',
+  color: 'transparent',
+  backgroundColor: root.color.grayscale.gray_200,
+  border: `1px solid ${root.color.grayscale.gray_200}`,
+  borderRadius: 9999,
+  width: '1.75rem',
+  height: '1.75rem',
+  maxWidth: '100%'
+})
+
 export const author = style({
   display: 'flex',
-  alignItems: 'center'
+  alignItems: 'center',
+  gap: 3,
 })
 
 export const name = style({
   display: 'flex',
   alignItems: 'center',
-  color: root.color.grayscale.gray_600,
+  color: root.color.grayscale.gray_700,
   fontWeight: 700,
   fontSize: '.875rem',
   lineHeight: 1.285,

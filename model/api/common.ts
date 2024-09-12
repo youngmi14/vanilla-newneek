@@ -1,11 +1,25 @@
 // 공통 타입
+export interface BaseType {
+  type: string;
+  id: number | null;
+};
+export interface ItemType {
+  comment: string;
+  handle: string;
+  id: number;
+  likes: number;
+  save: number;
+  tag: string;
+  title: string;
+};
 interface ThumbnailType {
   altText: string | null;
   id: number;
   url: string;
 }
+export type BadgeType = 'seed' | 'verified' | 'planet';
 export interface UserType {
-  badge: string;
+  badge: BadgeType;
   bio: string;
   followIdByMe?: null | number;
   handle: string;
@@ -67,4 +81,12 @@ export interface PostType {
   text: string;
   treeId: number;
   user: UserType;
+}
+export interface ArticleType {
+  contentPlain: string;
+  dtPublished: string;
+  id: number;
+  meta: MetaType;
+  state: string;
+  title: StampType;
 }

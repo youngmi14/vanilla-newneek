@@ -1,25 +1,35 @@
 import * as styles from './Post.css';
-import nowNews from '@/mock/nowNews';
-import { PostT } from '@/model/article';
+import { PostType } from '@/model/api/common';
 import Link from 'next/link';
 import MiniHeart from '@/public/svg/MiniHeart';
 import Comment from '@/public/svg/Comment';
+import Image from 'next/image';
+import { timeDifference } from '@/lib/util';
+import Badge from '@/public/svg/Badge';
 
-function Post() {
+function Post(post: PostType) {
   return (
-    <Link href={'/@tabletalk/post/54635'} className={styles.post}>
+    <Link href={`/@tabletalk/post/${post.id}`} className={styles.post}>
       <div>
         <div className={styles.title}>
           <div className={styles.authorWrap}>
-            <span>이미지</span>
+            <Image
+              src={post.user.photo}
+              alt={post.user.name}
+              className={styles.img}
+              width={28}
+              height={28}
+            />
             <div className={styles.author}>
-              <span className={styles.name}>테이블토크 이름길어지면 블라블라</span>
-              <span></span>
+              <span className={styles.name}>{post.user.name}</span>
+              <span>
+                <Badge type={post.user.badge} />
+              </span>
             </div>
           </div>
-          <time className={styles.time}>한 시간 전</time>
+          <time className={styles.time}>{timeDifference(post.createdAt)}</time>
         </div>
-        <p className={styles.content}>정부가 청약 월 납입인정한도 상향을 10월로 미뤘어요. 💸📅지난달 정부는 청약 월 납입인정한도를 10만 원에서 25만 원으로 상향하는 내용을 담은 개정안을 입법예고했는데요. 이르면 이달 중 시행할 예정이었지만, “이미 납입 중인 사람들한테 불공평해!” 라는 형평성 논란이 일자 다음달(10월) 1일 시행을 목표로 계획을 변경한 것. 🔗 https://www.newsis.com/view/NISX20240903_0002874070 </p>
+        <p className={styles.content}>{post.text}</p>
       </div>
       <div className={styles.interaction}>
         <div className={styles.iconWrap}>
@@ -29,14 +39,16 @@ function Post() {
               height={'12px'}
             />
           </span>
-          <span className={styles.iconText}>1</span>
+          <span className={styles.iconText}>
+            {post.stamps.all.count}
+          </span>
         </div>
         <div className={styles.iconWrap}>
           <Comment
             width={'16px'}
             height={'16px'}
           />
-          3
+          {post.childrenCount}
         </div>
       </div>
     </Link>

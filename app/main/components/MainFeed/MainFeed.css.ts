@@ -84,5 +84,5 @@ export const buttonSelected = style({
 
 export const bottomMargin = style({
   height: '2.5rem',
-  width: '100 %'
+  width: '100%'
 })

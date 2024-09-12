@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Cup from '../Cup/Cup';
 import ArrowR from '@/public/svg/ArrowR';
 
-// 지금 뜨는 뉴스
 function NewnewCup() {
   return (
     <div className={styles.newnewCup}>
