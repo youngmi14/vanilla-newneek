@@ -8,9 +8,9 @@ import Tag from '@/components/Tag/Tag';
 function Cup(item: ItemType) {
   return (
     <Link href={`/@${item.handle}/article/${item.id}`} className={styles.cup}>
-      <Tag tag={item.tag} />
+      { item.tag && <Tag tag={item.tag} /> }
       <div>
-        <div>
+        <div className={styles.contentWrap}>
           <p className={styles.title}>{item.title}</p>
         </div>
         <div className={styles.contentWrap}>
@@ -18,18 +18,22 @@ function Cup(item: ItemType) {
         </div>
       </div>
       <div className={styles.interaction}>
-        <Heart
-          checked={true} 
-          width={'16px'}
-          height={'16px'}
-        />
-        {item.likes}
-        <Bookmark
-          checked={true} 
-          width={'16px'}
-          height={'16px'}
-        />
-        {item.save}
+        <div className={styles.heartWrap}>
+          <Heart
+            checked={false} 
+            width={'16px'}
+            height={'16px'}
+          />
+          <span className={styles.iconText}>{item.likes}</span>
+          </div>
+        <div className={styles.bookmarkWrap}>
+          <Bookmark
+            checked={false} 
+            width={'16px'}
+            height={'16px'}
+          />
+          <span className={styles.iconText}>{item.save}</span>
+        </div>
       </div>
     </Link>
   )

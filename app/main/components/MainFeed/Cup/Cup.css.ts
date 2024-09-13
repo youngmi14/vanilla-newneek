@@ -55,6 +55,25 @@ export const content = style({
 
 export const interaction = style({
   display: 'flex',
-  justifyContent: 'space-between',
+  flexDirection: 'row',
   gap: '.75rem'
+})
+
+export const heartWrap = style({
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+})
+
+export const bookmarkWrap = style({
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+})
+
+export const iconText = style({
+  marginLeft: '.25rem',
+  fontSize: '.75rem',
+  lineHeight: 1.5,
+  color: root.color.grayscale.gray_400
 })
