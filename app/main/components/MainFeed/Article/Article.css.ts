@@ -31,19 +31,6 @@ export const thum = style({
   order: 2,
 });
 
-export const thumImg = style({
-  display: 'flex',
-  flexDirection: 'row',
-  position: 'absolute',
-  width: '100%',
-  height: '100%',
-  inset: 0,
-  borderRadius: '.5rem',
-  objectFit: 'cover',
-  objectPosition: 'center',
-  color: 'transparent',
-});
-
 export const contentWrap = style({
   display: 'flex',
   flexDirection: 'column',
@@ -101,9 +88,15 @@ export const authWrap = style({
   display: 'flex',
   gap: '.5rem',
   alignItems: 'center',
-})
+});
 
 export const author = style({
+  display: 'flex',
+  gap: 3,
+  alignItems: 'center'
+})
+
+export const authorName = style({
   color: root.color.grayscale.gray_700,
   fontSize: '.875rem',
   lineHeight: 1.285,

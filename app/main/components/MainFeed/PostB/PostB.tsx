@@ -3,9 +3,13 @@ import Post from '../Post/Post';
 import ViewMore from '@/components/ViewMore/ViewMore';
 import { PostData } from '@/model/api/feed-web';
 
-export default function PostB({
-  link, title, posts
-}: PostData) {
+interface PostBProps {
+  data: PostData;
+}
+
+const PostB:React.FC<PostBProps> = ({ data }) => {
+  const { link, title, posts } = data;
+
   return (
     <div className={styles.PostB}>
       <div className={styles.PostBFlex}>
@@ -17,7 +21,7 @@ export default function PostB({
           <div className={styles.postScroll}>
           <div className={styles.postWrap}>
             {posts.map(post => 
-              <Post key={post.id} {...post} />
+              <Post key={post.id} data={post} />
             )}
           </div>
           </div>
@@ -26,3 +30,5 @@ export default function PostB({
     </div>
   )
 }
+
+export default PostB;

@@ -25,7 +25,7 @@ export interface UserType {
   followIdByMe?: null | number;
   handle: string;
   name: string;
-  photo: string;
+  photo: string | undefined;
   userId: string;
 }
 interface SeriesType {
@@ -44,7 +44,7 @@ export interface MetaType {
   isLiked: boolean;
   isSaved: boolean;
   series: SeriesType;
-  thumbnail: ThumbnailType;
+  thumbnail: ThumbnailType | null;
   user: UserType;
   state: string;
   title: string;

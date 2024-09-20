@@ -28,7 +28,7 @@ function MainFeed() {
   }
   if (data) {
     feed = (
-      <Feed {...data} />
+      <Feed data={data.entities} />
     )
   }
 

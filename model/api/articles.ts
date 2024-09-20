@@ -2,7 +2,7 @@ import { MetaType } from './common';
 
 // article api reponse 타입
 
-interface ResultType {
+export interface ArticleType {
   contentPlain: string;
   dtPublished: string;
   id: number;
@@ -15,5 +15,5 @@ export type Articles = {
   count: number;
   next: string | null;
   previous: string | null;
-  results: ResultType[]
+  results: ArticleType[]
 }

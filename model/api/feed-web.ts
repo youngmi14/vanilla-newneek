@@ -7,16 +7,19 @@ export type CupData = {
   items: ItemType[]
 }
 type NewnewcupT = BaseType & {
+  type: 'newnewcup'
   data: CupData;
 };
 
 // article-a
+export type ArticleAData = {
+  link: string;
+  title: string;
+  articles: ArticleType[]
+}
 type ArticleAT = BaseType & {
-  data: {
-    link: string;
-    title: string;
-    articles: ArticleType[]
-  }
+  type: 'article';
+  data: ArticleAData;
 };
 
 // divider
@@ -40,13 +43,8 @@ export interface PostData {
 }
 export type PostBT = {
   id: null | number;
-  type: string;
+  type: 'post-b';
   data: PostData;
 };
 
 export type EntityType = PostBT | NewnewcupT | ArticleAT | DividerT | ArticleT;
-
-export type FeedData = {
-  entities: EntityType[];
-  cursor: null;
-};

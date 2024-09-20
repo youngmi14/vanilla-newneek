@@ -13,6 +13,8 @@ export const timeDifference = (pastTimeStr: string): string => {
   const diffMinutes = diffSeconds / 60;
   // 시간 단위로 변환
   const diffHours = diffSeconds / 3600;
+  // 일 단위로 변환
+  const diffDays = diffHours / 24;
 
   // 30분 이하일 때
   if (diffMinutes < 10) {
@@ -26,9 +28,19 @@ export const timeDifference = (pastTimeStr: string): string => {
   else if (diffHours < 2) {
     return '한 시간 전';
   }
-  // 그 외 경우
-  else {
+  // 24시간 이하일 때
+  else if (diffHours < 24) {
     const hours = Math.floor(diffHours);
     return `${hours}시간 전`;
+  }
+  // 그 외, 24시간 이상일 때 (일 단위로 표시)
+  else if (diffDays < 7) {
+    const days = Math.floor(diffDays);
+    return `${days}일 전`;
+  }
+  // 일주일 이상일 때 (주 단위로 표시)
+  else {
+    const weeks = Math.floor(diffDays / 7);
+    return `${weeks}주 전`;
   }
 }

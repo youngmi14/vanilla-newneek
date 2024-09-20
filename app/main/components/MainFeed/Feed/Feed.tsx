@@ -1,5 +1,4 @@
-import { generateUniqueId } from '@/lib/util';
-import { EntityType, FeedData } from '@/model/api/feed-web';
+import { EntityType } from '@/model/api/feed-web';
 import PostB from '../PostB/PostB';
 import NewnewCup from '../NewnewCup/NewnewCup';
 import Article from '../Article/Article';
@@ -7,31 +6,45 @@ import Divider from '../Divider/Divider';
 import ArticleA from '../ArticleA/ArticleA';
 import * as styles from './Feed.css';
 
-export default function Feed({
-  entities
-}: FeedData) {
+interface FeedProps {
+  data: EntityType[];
+}
+
+const Feed: React.FC<FeedProps> =({ data }) => {
+
   return (
     <div className={styles.articleWrap}>
-      {entities.map((feed) =>
-        <FeedBlock key={generateUniqueId()} {...feed} />
-      )}
+      {data.map((feed, idx) => {
+          switch (feed.type) {
+            case 'post-b':
+              return <PostB
+                key={`post-b-${feed.id || idx}-${idx}`}
+                data={feed.data}
+              />
+            case 'newnewcup':
+              return <NewnewCup
+                key={`newnewcup-${feed.id || idx}-${idx}`}
+                data={feed.data}
+              />
+            case 'article':
+              return <Article
+                key={`article-${feed.id || idx}-${idx}`}
+                data={feed.data}
+              />
+            case 'article-a':
+              return <ArticleA
+                key={`article-a-${feed.id || idx}-${idx}`}
+                data={feed.data}
+              />
+            case 'divider':
+              return <Divider key="divider" />
+            default:
+              return null;
+          }
+        })
+      }
     </div>
   )
 }
 
-// 데이터 type따라 컴포넌트 생성
-function FeedBlock({
-  type,
-  data
-}: EntityType) {
-
-  return (
-    <>
-      {type === 'post-b' && <PostB {...data} />}
-      {type === 'newnewcup' && <NewnewCup {...data} />}
-      {type === 'article-a' && <ArticleA />}
-      {type === 'article' && <Article />}
-      {type === 'divider' && <Divider />}
-    </>
-  )
-}
+export default Feed;

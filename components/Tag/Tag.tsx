@@ -3,15 +3,28 @@ import { TagType } from '@/model/api/common';
 
 interface TagProps {
     tag: TagType;
+    children: React.ReactNode;
 }
 
-export default function Tag ({tag}: TagProps
-) {
+const Tag: React.FC<TagProps> = ({ tag, children}) => {
+    let tagColor: "orange" | "purple" | "green";
+    
+    switch (tag) {
+        case "나의AI":
+            tagColor = "orange"
+            break;
+        case "나의덕질":
+            tagColor = "purple"
+            break;
+        case "나의지구":
+            tagColor = "green"
+            break;
+        default:
+            tagColor = "orange";
+    }
 
-    const style = {};
-    return(
-        <span className={styles.tag}>
-            #{tag}
-        </span>
-    )
-}
+    return (
+        <span className={styles.tagVariants[tagColor]}>#{children}</span>
+    )}
+
+export default Tag;
