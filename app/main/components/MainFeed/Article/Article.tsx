@@ -29,9 +29,11 @@ const Article: React.FC<ArticleProps> = ({ data }) => {
             />
           </div>
           <div className={styles.contentWrap}>
-            <div>
-              <span className={styles.contentSummary}>{meta.series.title}</span>
-            </div>
+            {meta.series && 
+              <div>
+                <span className={styles.contentSummary}>{meta.series?.title}</span>
+              </div>
+            }
             <h2 className={styles.contentTitle}>{title}</h2>
             <p className={styles.contentDes}>{contentPlain}</p>
           </div>

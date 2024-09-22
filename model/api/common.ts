@@ -43,7 +43,7 @@ export interface MetaType {
   cursor: number;
   isLiked: boolean;
   isSaved: boolean;
-  series: SeriesType;
+  series: SeriesType | null;
   thumbnail: ThumbnailType | null;
   user: UserType;
   state: string;
