@@ -10,7 +10,12 @@ export const startNewNeek = style({
   height: 'calc(100vh - 64px)',
   position: 'sticky',
   top: '4rem',
-  zIndex: 40
+  zIndex: 40,
+  '@media': {
+    'screen and (max-width: 1200px)': {
+      display: 'none'
+    }
+  }
 })
 
 export const startNewNeekWrap = style({

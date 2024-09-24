@@ -50,7 +50,7 @@ const SideBlock: React.FC<{ item: DataItem }> = ({ item }) => {
   return null;
 }
 
-const SideBlocks = () => {
+const SideMenu = () => {
   const { data: data, isLoading, error } = useQuery({
     queryKey: ['block'],
     queryFn: async () => (await fetch('https://api.newneek.co/product/v1/home/blocks')).json()
@@ -64,8 +64,8 @@ const SideBlocks = () => {
   }
 
   return (
-    <aside className={styles.sideBlocks}>
-      <div className={styles.sideBlocksWrap}>
+    <aside className={styles.sideMenu}>
+      <div className={styles.sideMenuWrap}>
         {data.entities.map((item:DataItem, idx: number) => 
           <SideBlock key={idx} item={item} />
         )}
@@ -75,4 +75,4 @@ const SideBlocks = () => {
   )
 }
 
-export default SideBlocks;
+export default SideMenu;
