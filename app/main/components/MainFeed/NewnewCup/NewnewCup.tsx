@@ -8,7 +8,7 @@ interface NewnewcupProps {
 }
 const NewnewCup: React.FC<NewnewcupProps> = ({ data }) => {
   const { title, link, items } = data;
-  console.log('NewnewCup: ', data)
+  // console.log('NewnewCup: ', data)
 
   return (
     <div className={styles.newnewCup}>

@@ -1,6 +1,7 @@
 import * as styles from './PopularArticles.css';
 import Article from './Article';
 import { ArticleT } from '@/model/article';
+import { ArticleTrendingType } from '@/model/api/block';
 
 // data는 엄청 많은데, 그중 상위 5개만 가져와야 함
 const data: ArticleT[] = [
@@ -30,23 +31,24 @@ const data: ArticleT[] = [
   },
 ]
 
-export default function PopularArticles() {
+interface PopularArticlesProps {
+  data: ArticleTrendingType;
+}
+
+const PopularArticles: React.FC<PopularArticlesProps> = ({ data: articleData }) => {
+  const { data } = articleData;
+  console.log('[인기있는 아티클] ==> ', data);
+
   return (
     <div className={styles.popularArticles}>
-      <h2 className={styles.title}>지금 인기있는 아티클</h2>
-      <ArtileList />
+      <h2 className={styles.title}>지금 인기있는 아티클 🔥</h2>
+      <ul className={styles.ul}>
+        {data.map((article, idx) => (
+          <Article data={article} key={idx} idx={idx+1} />
+        ))}
+      </ul>
     </div>
   )
 }
 
-function ArtileList() {
-  return (
-    <ul className={styles.ul}>
-      {data.map((article, idx) => (
-        <li key={idx}>
-          <Article data={article} />
-        </li>
-      ))}
-    </ul>
-  )
-}
+export default PopularArticles;

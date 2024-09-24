@@ -1,69 +1,83 @@
 // block api
 
-// 공통 필드를 가진 기본 타입 정의
-type BaseType = {
-  type: string;
-  data: { id: number }[] | { id: number };
+export interface ArticleNewsDataType {
+  dtPublished: string;
+  id: number;
+  reads: number;
+  title: string;
+}
+export interface ArticleNewsType {
+  type: 'article-news';
+  data: ArticleNewsDataType[];
 }
 
-// 공통 아티클 타입 정의
-type BaseArticleType = BaseType & {
-  data: {
-    dtPublished: string;
-    reads: number;
-    title: string;
-  }[];
-}
-
-// type: quiz
-type QuizType = BaseType & {
-  data: { id: number };
-}
-
-// type: article-news
-type ArticleNewsType = BaseArticleType;
-
-// type: article-trending
-type ArticleTrendingType = BaseArticleType & {
-  data: {
-    user: string;
-    userHandle: string;
-  }[];
-}
-
-// type: series
-type SeriesType = BaseArticleType & {
-  articles: number;
-  thumbnail: string;
+export interface ArticleTrendingDataType {
+  dtPublished: string;
+  id: number;
+  reads: number;
   title: string;
   user: string;
+  userHandle: string;
+}
+export interface ArticleTrendingType {
+  type: 'article-trending';
+  data: ArticleTrendingDataType[]
 }
 
-// type: channel
-type ChannelType = BaseType & {
+export interface SeriesType {
+  type: 'series';
+  data: {
+    articles: number;
+    id: number;
+    thumbnail: string;
+    title: string;
+    user: string;
+  }[]
+}
+
+export interface ChannelType {
+  type: 'channel';
   data: {
     description: string;
+    id: number;
     members: number;
     name: string;
     thumbnail: string;
     topic: string;
-  }[];
-}
-
-// type: banner
-type BannerType = BaseType & {
-  data: {
-    linkImage: string;
-    linkImageAlt: string;
-    linkImageSmall: string;
-    linkLabel: null | string;
-    linkUrl: string;
-    title: string;
-    type: number;
   }[]
 }
-
-export type BlockData = {
-  tag: string;
-  entities: (QuizType|ArticleNewsType|ArticleTrendingType|SeriesType|ChannelType|BannerType)[];
+export interface BannerDataType {
+  id: number;
+  linkImage: string;
+  linkImageAlt: string;
+  linkImageSmall: string;
+  linkLabel: string | null;
+  linkUrl: string;
+  title: string;
+  type: number;
 }
+export interface BannerType {
+  type: 'banner';
+  data: BannerDataType[]
+}
+
+export interface PizzaDataType {
+  endDt: string;
+  formId: string;
+  startDt: string;
+  surveyDescription: string;
+  surveyTitle: string;
+}
+export interface PizzaType {
+  type: 'pizza';
+  data: PizzaDataType;
+}
+
+// 데이터 아이템 타입 정의
+export type DataItem =
+  ArticleNewsType |
+  ArticleTrendingType |
+  BannerType |
+  SeriesType |
+  ChannelType |
+  PizzaType;

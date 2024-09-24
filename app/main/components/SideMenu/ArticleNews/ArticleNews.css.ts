@@ -1,7 +1,7 @@
 import { style } from '@vanilla-extract/css';
 import { root } from '@/styles/globalTheme.css';
 
-export const oneMinuteNews = style({
+export const articleNews = style({
   padding: '1rem',
   borderRadius: '.5rem',
   border: `1px solid ${root.color.grayscale.gray_100}`,

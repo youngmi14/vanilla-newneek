@@ -46,7 +46,9 @@ export const articleTitle = style({
   fontSize: '.875rem',
   lineHeight: 1.285,
   overflow: 'hidden',
+  display: '-webkit-box',
   WebkitLineClamp: 1,
+  WebkitBoxOrient: 'vertical'
 })
 
 export const infoWrap = style({
