@@ -20,12 +20,20 @@ export interface BookmarkProp extends svgPropT {
 }
 
 // Bell
-export interface BellProp extends svgPropT {}
+export interface BellProp extends svgPropT {
+    color: string;
+}
 
 // ArrowR
 export interface ArrowRProp extends svgPropT {}
 
 // Search
 export interface SearchProp extends svgPropT {
-    header: boolean;
+    color: string;
 }
+
+// Newneek logo
+export interface NewneekLogoProp extends svgPropT {}
+
+// Hamburger
+export interface HamburgerProp extends svgPropT {}

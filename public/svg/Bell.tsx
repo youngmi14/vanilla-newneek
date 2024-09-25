@@ -1,4 +1,17 @@
-const Bell = () => {
+import { BellProp } from "@/model/svg";
+
+const Bell = ({
+  width,
+  height,
+  color
+}: BellProp) => {
+
+  const style = {
+    width: width ? width : '24px',
+    height: height ? height : '24px',
+    color: color
+  }
+
   return (
     <svg
       color="#ffffff"
@@ -6,6 +19,7 @@ const Bell = () => {
       width="24"
       height="24"
       viewBox="0 0 24 24"
+      style={style}
       >
       <path
         d="M6 10.5C6 7.18629 8.68629 4.5 12 4.5V4.5C15.3137 4.5 18 7.18629 18 10.5V17H6V10.5Z"
