@@ -19,3 +19,9 @@ export const title = style({
     color: root.color.grayscale.gray_900,
     fontWeight: 700,
 })
+
+export const postWrap = style({
+    display: 'grid',
+    gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
+    gap: '.75rem',
+})

@@ -1,5 +1,5 @@
 import * as styles from './PostB.css';
-import Post from '../Post/Post';
+import Post from '@/components/Post/Post';
 import ViewMore from '@/components/ViewMore/ViewMore';
 import { PostData } from '@/model/api/feed-web';
 

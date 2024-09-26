@@ -9,15 +9,17 @@ export const root = createGlobalTheme(':root', {
     primary: {
       orange_900: '#ff6b00',
       orange_500: '#fc937c',
-    }, // ced0d1
+    },
     grayscale: {
+      gray_010: '#f5f5f5',
       gray_100: '#eeeeee',
       gray_200: '#e4e5e5',
       gray_300: '#ced0d1',
       gray_400: '#979b9e',
       gray_500: '#77797b',
       gray_600: '#575b5c',
-      gray_700: '#3c4043',
+      gray_700: '#4a4944',
+      gray_800: '#3c4043',
       gray_900: '#111213',
     },
     system: {

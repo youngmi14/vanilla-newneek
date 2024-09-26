@@ -24,7 +24,7 @@ export const article = style({
 })
 
 export const number = style({
-  color: root.color.grayscale.gray_700,
+  color: root.color.grayscale.gray_800,
   fontSize: '.75rem',
   lineHeight: 1.5,
   textAlign: 'center',

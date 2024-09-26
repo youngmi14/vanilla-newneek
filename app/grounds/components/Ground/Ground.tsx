@@ -1,5 +1,7 @@
 import * as styles from './Ground.css';
 import Image from 'next/image';
+import User from '@/public/svg/User';
+import { root } from '@/styles/globalTheme.css';
 
 const Ground = () => {
     return (
@@ -14,9 +16,12 @@ const Ground = () => {
             <div className={styles.content}>
                 <strong className={styles.title}>뿌듯해 저장소</strong>
                 <p className={styles.des}>오늘 하루 뿌듯한 날은 언제엿나요?</p>
-                <div>
-                    <span>1명</span>
-                    <span>사회/이슈</span>
+                <div className={styles.infoWrap}>
+                    <span className={styles.user}>
+                        <User width={'.75rem'} height={'.75rem'} color={root.color.grayscale.gray_400} />
+                        1명
+                    </span>
+                    <span className={styles.topic}>사회/이슈</span>
                 </div>
             </div>
         </div>

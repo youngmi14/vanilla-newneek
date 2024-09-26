@@ -37,3 +37,8 @@ export interface NewneekLogoProp extends svgPropT {}
 
 // Hamburger
 export interface HamburgerProp extends svgPropT {}
+
+// User
+export interface UserProp extends svgPropT {
+    color: string;
+}

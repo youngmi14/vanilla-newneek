@@ -1,13 +1,17 @@
-// import StartNewNeek from '../StartNewNeek/StartNewNeek';
-import MainFeed from '../MainFeed/MainFeed';
-// import SideMenu from '../SideMenu/SideMenu';
 import * as styles from './Main.css';
+import PopularGroundPost from '../PopularGroundPost/PopularGroundPost';
+import AllGround from '../AllGround/AllGround';
 
-function Main() {
+function Main () {
   return (
     <main className={styles.main}>
       {/* <StartNewNeek /> */}
-      <MainFeed />
+      <div className={styles.mainFeed}>
+        <div className={styles.mainFeedWrap}>
+          <PopularGroundPost />
+          <AllGround />
+        </div>
+      </div>
       {/* <SideMenu /> */}
     </main>
   )

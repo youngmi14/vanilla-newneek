@@ -10,7 +10,7 @@ export const divider = style({
 });
 
 export const title = style({
-  color: root.color.grayscale.gray_700,
+  color: root.color.grayscale.gray_800,
   fontWeight: 700,
   fontSize: '1.125rem',
   lineHeight: 1.333,

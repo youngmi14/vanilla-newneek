@@ -45,3 +45,32 @@ export const des = style({
     WebkitBoxOrient: 'vertical',
     WebkitLineClamp: 2
 })
+
+export const infoWrap = style({
+    display: 'flex',
+    gap: '.5rem',
+    alignItems: 'center',
+})
+
+export const topic = style({
+    padding: '.25rem .5rem',
+    fontSize: '.75rem',
+    lineHeight: 1.5,
+    display: 'inline-felx',
+    justifyContent: 'center',
+    alignItems: 'center',
+    background: root.color.grayscale.gray_010,
+    color: root.color.grayscale.gray_700,
+    borderRadius: 9999,
+    height: 26,
+})
+
+export const user = style({
+    fontSize: '.75rem',
+    fontWeight: 700,
+    lineHeight: 1.5,
+    gap: '.125rem',
+    display: 'inline-flex',
+    alignItems: 'center',
+    color: root.color.grayscale.gray_500,
+})

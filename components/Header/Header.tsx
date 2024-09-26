@@ -23,14 +23,19 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.navWrap}>
         <ul className={styles.navMenuLg}>
-          <li><NewneekLogo width={'142'} height={'1.75rem'} /></li>
+          <li>
+            <Link href={'/'}>
+              <NewneekLogo width={'142px'} height={'1.75rem'} />
+            </Link>
+          </li>
           {menuItems.map((item, idx) => (
             <li key={idx}>
               <Link
                 href={item.link}
                 className={activeMenu === idx ? styles.liSelected : styles.li }
                 onClick={() => setActiveMenu(idx)}
-              >{item.name}</Link>
+              >{item.name}
+              </Link>
             </li>
           ))}
           <li><a

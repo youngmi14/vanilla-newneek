@@ -41,7 +41,7 @@ export const contentWrap = style({
 export const contentSummary = style({
   backgroundColor: root.color.grayscale.gray_100,
   fontWeight: 700,
-  color: root.color.grayscale.gray_700,
+  color: root.color.grayscale.gray_800,
   maxWidth: '14rem',
   width: 'fit-content',
   lineHeight: 1.5,
@@ -97,7 +97,7 @@ export const author = style({
 })
 
 export const authorName = style({
-  color: root.color.grayscale.gray_700,
+  color: root.color.grayscale.gray_800,
   fontSize: '.875rem',
   lineHeight: 1.285,
   fontWeight: 700,
