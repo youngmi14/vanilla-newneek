@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Search from '@/public/svg/Search';
 import Bell from '@/public/svg/Bell';
@@ -10,14 +11,21 @@ import { root } from '@/styles/globalTheme.css';
 import * as styles from './Header.css';
 
 export default function Header() {
+  const pathname = usePathname();
+  const [activeMenu, setActiveMenu] = useState<number | null>(null);
 
-  const [activeMenu, setActiveMenu] = useState<number>(0);
-
-  const menuItems = [
+  const menuItems = useMemo(() => [
     { name: '홈', link: '/' },
     { name: '시리즈', link: '/series' },
     { name: '그라운드', link: '/grounds' },
-  ];
+  ], []);
+
+  useEffect(() => {
+    const activeIndex = menuItems.findIndex(item => item.link === pathname);
+    if (activeIndex !== -1) {
+      setActiveMenu(activeIndex);
+    }
+  }, [pathname]);
 
   return (
     <header className={styles.header}>
@@ -33,7 +41,6 @@ export default function Header() {
               <Link
                 href={item.link}
                 className={activeMenu === idx ? styles.liSelected : styles.li }
-                onClick={() => setActiveMenu(idx)}
               >{item.name}
               </Link>
             </li>
