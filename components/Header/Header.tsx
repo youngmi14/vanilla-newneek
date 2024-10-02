@@ -10,15 +10,16 @@ import Hamburger from '@/public/svg/Hamburger';
 import { root } from '@/styles/globalTheme.css';
 import * as styles from './Header.css';
 
+// 메뉴
+const menuItems = [
+  { name: '홈', link: '/' },
+  { name: '시리즈', link: '/series' },
+  { name: '그라운드', link: '/grounds' },
+]
+
 export default function Header() {
   const pathname = usePathname();
   const [activeMenu, setActiveMenu] = useState<number | null>(null);
-
-  const menuItems = useMemo(() => [
-    { name: '홈', link: '/' },
-    { name: '시리즈', link: '/series' },
-    { name: '그라운드', link: '/grounds' },
-  ], []);
 
   useEffect(() => {
     const activeIndex = menuItems.findIndex(item => item.link === pathname);

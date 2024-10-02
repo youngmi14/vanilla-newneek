@@ -42,3 +42,8 @@ export interface HamburgerProp extends svgPropT {}
 export interface UserProp extends svgPropT {
     color: string;
 }
+
+// Close
+export interface CloseProp extends svgPropT {
+    color: string;
+}
