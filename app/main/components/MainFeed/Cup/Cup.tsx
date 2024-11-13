@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Bookmark from '@/public/svg/Bookmark';
 import Heart from '@/public/svg/Heart';
 import { ItemType } from '@/model/api/common';
-import Tag from '@/components/Tag/Tag';
+import Tag from '@/app/components/Tag/Tag';
 
 interface CupProps {
   data: ItemType;

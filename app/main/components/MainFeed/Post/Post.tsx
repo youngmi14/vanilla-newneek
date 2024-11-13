@@ -4,7 +4,7 @@ import { timeDifference } from '@/lib/util';
 import MiniHeart from '@/public/svg/MiniHeart';
 import Comment from '@/public/svg/Comment';
 import Badge from '@/public/svg/Badge';
-import UserPhoto from '@/components/Image/UserPhoto';
+import UserPhoto from '@/app/components/Image/UserPhoto';
 import * as styles from './Post.css';
 
 interface PostProps {

@@ -1,5 +1,5 @@
 import Article from '../Article/Article';
-import ViewMore from '@/components/ViewMore/ViewMore';
+import ViewMore from '@/app/components/ViewMore/ViewMore';
 import { ArticleAData } from '@/model/api/feed-web';
 import * as styles from './ArticleA.css';
 

@@ -1,6 +1,6 @@
 import * as styles from './PostB.css';
-import Post from '@/components/Post/Post';
-import ViewMore from '@/components/ViewMore/ViewMore';
+import Post from '@/app/components/Post/Post';
+import ViewMore from '@/app/components/ViewMore/ViewMore';
 import { PostData } from '@/model/api/feed-web';
 
 interface PostBProps {

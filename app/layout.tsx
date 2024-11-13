@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import '@/styles/reset.css';
-import Header from '@/components/Header/Header';
-import Footer from '@/components/Footer/Footer';
+import Header from '@/app/components/Header/Header';
+import Footer from '@/app/components/Footer/Footer';
 
 const myFont = localFont({
   src: '../public/fonts/Pretendard.woff2'

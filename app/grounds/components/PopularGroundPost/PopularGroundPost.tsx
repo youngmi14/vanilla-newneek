@@ -1,6 +1,6 @@
-import Post from '@/components/Post/Post';
+import Post from '@/app/components/Post/Post';
 import * as styles from './PopularGroundPost.css';
-import ViewMore from '@/components/ViewMore/ViewMore';
+import ViewMore from '@/app/components/ViewMore/ViewMore';
 
 const PopularGroundPost = () => {
 
@@ -69,9 +69,9 @@ const PopularGroundPost = () => {
         <ViewMore link={POPULARGROUND_INFO.link} />
       </div>
       <div className={styles.postWrap}>
-        {PostList.map(post =>
+        {/* {PostList.map(post =>
           <Post key={post.id} data={post} />
-        )}
+        )} */}
       </div>  
     </section>
   )

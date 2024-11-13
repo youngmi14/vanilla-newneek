@@ -1,6 +1,6 @@
 import * as styles from './NewnewCup.css';
 import Cup from '../Cup/Cup';
-import ViewMore from '@/components/ViewMore/ViewMore';
+import ViewMore from '@/app/components/ViewMore/ViewMore';
 import { CupData } from '@/model/api/feed-web';
 
 interface NewnewcupProps {
